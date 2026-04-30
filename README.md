@@ -4,6 +4,14 @@
 
 ---
 
+## 📦 已收录技能
+
+- `tool/har-ad-analysis`：HAR 广告分析与规则生成 skill
+- `tool/har-task-automation-script`：HAR 任务自动化脚本生成 skill
+- `tool/a-share-stock-picker`：A 股选股 skill，来源标注为 Linux.do 分享包
+
+---
+
 ## 📌 项目说明
 
 本仓库主要用于整理和记录我在工作与生活中使用到的各种技能与经验，包括但不限于：
