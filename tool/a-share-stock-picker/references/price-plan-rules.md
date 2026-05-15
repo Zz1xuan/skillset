@@ -78,6 +78,14 @@ Preferred setup types:
 2. Early pullback after a strong close
 3. Reclaim of a key level after an intraday washout
 
+Mandatory rejection checks before naming any short-term pick:
+
+- Reject the setup if the stock has already run hard for `2` or more sessions and tomorrow's tradability depends on a strong gap up rather than a normal open or pullback
+- Reject the setup if a same-night clarification, investor Q&A answer, or exchange abnormal-volatility notice weakens the main speculation narrative
+- Reject the setup if the nearest realistic stop would likely be skipped by a gap-down open
+- Reject the setup if a retail-sized account would need perfect execution to avoid outsized slippage
+- Reject the setup if the stock was recently limit-up and the next-session plan is basically `hope it keeps going`
+
 ### Short-Term Buy Price
 
 Before picking a short-term buy price, decide which setup type fits best:
@@ -91,6 +99,7 @@ If the stock closed strong and near the high:
 - Set `触发买价` slightly above the latest completed-session close or above the latest completed-session high
 - Typical breakout buffer: roughly `0.2%` to `1.0%`
 - Do not force an exact price if the stock was a one-word board or effectively untradable
+- If the likely next open is already far above that buffer, remove the stock rather than pretending the user can still execute the original plan
 
 If the stock faded late but the broader trend is still intact:
 
@@ -111,6 +120,8 @@ Anchor `止损价` to the nearest invalidation level:
 - Apply a small buffer only if needed to avoid obvious noise, usually around `0.5%` to `1.5%`
 
 Never set a stop so wide that the short-term setup becomes a medium-term trade by accident.
+
+If a realistic next-day gap could jump directly through the stop, mark the setup as execution-fragile and remove it from short-term recommendations instead of keeping a fake precise stop.
 
 ### Short-Term Targets
 
@@ -234,6 +245,8 @@ Do not output exact buy, stop, or target numbers when:
 - The stock was effectively untradable
 - Recent price structure is too chaotic to support a clean invalidation line
 - The broader historical window conflicts with the apparent strength of the latest completed session
+- The next-session opening risk is large enough that a retail trader may not be able to execute near the planned stop
+- The thesis is driven by a hot concept, but company clarification or disclosure has already narrowed that narrative
 
 In these cases, switch to:
 
