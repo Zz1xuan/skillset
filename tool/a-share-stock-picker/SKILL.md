@@ -113,6 +113,14 @@ When the user wants exact buy, stop, or target prices, also load:
 
 - `references/price-plan-rules.md`
 
+Before finalizing short-term picks, run a mandatory tradability filter:
+
+- Reject names that are only attractive if the next day gaps up hard at the open
+- Reject names whose thesis depends mainly on a fresh rumor, concept association, or Q&A snippet that the company itself has already weakened or clarified
+- Reject names that just had `股票交易异常波动公告` after a fast two-day or three-day run unless the setup is a pullback/retest rather than next-day continuation
+- Reject names where a small retail account would likely face severe slippage, instant stop-loss failure, or no practical exit if the open turns into a one-way selloff
+- For small accounts, prefer liquid names that still have room to trade around the previous close; do not make a high-gap continuation play the first choice
+
 ### 5. Produce exactly 9 picks
 
 Default output:
@@ -169,6 +177,16 @@ Use horizon-appropriate timing language:
 - Long term: staged entry over the next 5-20 trading days, thesis review over 6-24 months
 
 When giving exact levels, explain them as structure-based levels derived from Tonghuashun session data, recent highs/lows, and turnover behavior rather than as guarantees.
+
+## Short-Term Guardrails
+
+Treat these as hard constraints, not optional caveats:
+
+- If a short-term idea becomes invalid when the next session opens above the planned chase band, say `高开即放弃` clearly and do not present the stock as the top choice for a small account
+- If the best-case entry requires sub-minute execution or perfect tape reading, downgrade the name or remove it
+- If the company has issued a clarification that weakens the hottest market narrative, explicitly treat that as a negative catalyst
+- If the stock has already accelerated for two or more sessions and the next tradable resistance is far below the likely opening impulse, prefer `不推荐` over forced price precision
+- If a short-term stop would likely fail because the stock can gap through it at the next open, say that execution risk is too high and remove the name from the lead recommendation
 
 ## Reference Files
 
